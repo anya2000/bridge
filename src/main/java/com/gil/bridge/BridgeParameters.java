@@ -32,9 +32,13 @@ public class BridgeParameters {
     private Double _alfa;
     public static String alfa= "G11";
 
+    private int _dBridge = 0;
+    public static String dBridge= "C14";
+
     public static String i2= "G8";
 
     private List<DRoadParams> dRoadParams = new ArrayList();
+    private String destFile;
 
     static class DRoadParams{
         private double dRoad;
@@ -151,11 +155,27 @@ public class BridgeParameters {
         this._alfa = alfa;
     }
 
+    public int getdBridge() {
+        return _dBridge;
+    }
+
+    public void setdBridge(int _dBridge) {
+        this._dBridge = _dBridge;
+    }
+
     public List<DRoadParams> getdRoadParams() {
         return dRoadParams;
     }
 
     public void setdRoadParams(List<DRoadParams> dRoadParams) {
         this.dRoadParams = dRoadParams;
+    }
+
+    public String getDestFile() {
+        return destFile;
+    }
+
+    public void setDestFile(String destFile) {
+        this.destFile = destFile;
     }
 }

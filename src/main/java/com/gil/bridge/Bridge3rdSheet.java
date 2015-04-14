@@ -11,11 +11,10 @@ public class Bridge3rdSheet extends BridgeLevelSheet{
 
     Bridge3rdSheet(BridgeWorkbook workbook, String sheetName) {
         super(workbook, sheetName);
-        //מפלסי  מיסעה
-        this.title3 = "\u05de\u05e4\u05dc\u05e1\u05d9  \u05de\u05d9\u05e1\u05e2\u05d4";
+        this.title3 = "מפלסי  מיסעה";
     }
 
     public void run() {
-        putParamTable(false);
+        fillParamTable(false);
     }
 }

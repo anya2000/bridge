@@ -96,6 +96,9 @@ public abstract class BridgeSheet {
         if (value instanceof Double) {
             cell.setCellValue((Double) value);
         }
+        if (value instanceof Integer) {
+            cell.setCellValue((Integer) value);
+        }
         XSSFCellStyle cellStyle = workbook.getEmptyStyle();
         cell.setCellStyle(cellStyle);
         return new CellStyle(cellStyle);

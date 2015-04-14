@@ -155,8 +155,7 @@ public class BridgeWorkbook {
 
     public void writeToFile(XSSFWorkbook wb) {
         try {
-            String fileName = "c:/src/bridge/a.xlsx";
-            OutputStream fos = new BufferedOutputStream(new FileOutputStream(fileName));
+            OutputStream fos = new BufferedOutputStream(new FileOutputStream(bridgeParams.getDestFile()));
             wb.write(fos);
             IOUtils.closeQuietly(fos);
         } catch (IOException e) {

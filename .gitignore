@@ -5,3 +5,4 @@ bridge.ipr
 *.jar
 /.gradle
 /build
+/result

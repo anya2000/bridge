@@ -22,7 +22,7 @@ public abstract class BridgeLevelSheet extends BridgeSheet{
         super(workbook, sheetName);
     }
 
-    void putParamTable(boolean isFirstPage){
+    void fillParamTable(boolean isFirstPage){
         setCellValue("H2", bridgeParams.getRoadName())
                 .setFont(workbook.getHeader1Font()).setAlignment(ALIGN_RIGHT);
 
