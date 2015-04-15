@@ -6,3 +6,5 @@ bridge.ipr
 /.gradle
 /build
 /result
+/out
+a.txt

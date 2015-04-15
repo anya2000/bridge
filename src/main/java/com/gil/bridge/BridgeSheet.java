@@ -47,7 +47,7 @@ public abstract class BridgeSheet {
     }
 
     protected XSSFCell getCell(String cellCoordinates) {
-        int colNo = cellCoordinates.charAt(0) - 'A' + 1;
+        int colNo = getColNumber(cellCoordinates) + 1;
         int rowNo = Integer.parseInt(cellCoordinates.substring(1));
 
         XSSFRow row = sheet.getRow(rowNo - 1);
@@ -60,7 +60,9 @@ public abstract class BridgeSheet {
         }
         return cell;
     }
-
+    protected int getColNumber(String colLetter){
+        return colLetter.charAt(0) - 'A';
+    }
     protected XSSFCell setCellValue(int rowNo, int colNo, Object value, XSSFCellStyle style) {
         XSSFCell cell = getCell(rowNo, colNo);
         if (value instanceof String) {

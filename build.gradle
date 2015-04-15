@@ -5,21 +5,28 @@ apply plugin: 'idea'
 
 version = '1.0'
 
-jar {
-    manifest {
-        attributes 'Implementation-Title': 'Gil\'s Bridge', 'Implementation-Version': version
-    }
-} 
-
 repositories {
     mavenCentral()
 }
 
+ext {
+    mainClass = 'com.gil.bridge.Main'
+}
+
 dependencies {
-    compile group: 'org.apache.poi', name: 'poi', version: '3.11'
-    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.11'
+    compile group: 'org.apache.poi', name: 'poi', version: '3.12-beta1'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.12-beta1'
 
     testCompile group: 'org.testng', name: 'testng', version: '6.1.1'
 }  
  
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gil\'s Bridge', 'Implementation-Version': version, 'Main-Class': mainClass
+    }
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+} 
+
+
 test.onlyIf { Boolean.getBoolean('run.tests') }
+

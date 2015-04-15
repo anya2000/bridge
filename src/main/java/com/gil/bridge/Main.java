@@ -41,6 +41,7 @@ public class Main extends Application {
                 bridgeParams.getdRoadParams().add(new BridgeParameters.DRoadParams(169.85, "PIER"));
                 bridgeParams.getdRoadParams().add(new BridgeParameters.DRoadParams(189.85, "ABUT"));
 
+                bridgeParams.setDestFile("c:/temp/bridge1.xlsx");
 
                 new BridgeWorkbook(bridgeParams).run();
                 System.out.println("Hello World!");
